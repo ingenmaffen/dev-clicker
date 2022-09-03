@@ -3,7 +3,7 @@ import { DevelopPanel } from './Layout/DevelopPanel';
 import { ResourcePanel } from './Layout/ResourcePanel';
 import { SellPanel } from './Layout/SellPanel';
 
-function App() {
+const App = () => {
   return (
     <div className="main-content">
       <DevelopPanel />

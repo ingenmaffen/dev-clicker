@@ -1,0 +1,8 @@
+.develop-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.develop-panel > * {
+    margin-bottom: 10px;
+}

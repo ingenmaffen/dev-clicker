@@ -1,3 +1,5 @@
 export const SellPanel = () => (
-    <button>Sell an App</button>
+    <div>
+        <button>Sell an App</button>
+    </div>
 );

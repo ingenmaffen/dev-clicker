@@ -1,3 +1,5 @@
 export const ResourcePanel = () => (
-    <button>Buy a Developer</button>
+    <div>
+        <button>Hire a Developer</button>
+    </div>
 );

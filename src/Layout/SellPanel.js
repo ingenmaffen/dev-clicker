@@ -1,5 +1,6 @@
-export const SellPanel = () => (
-    <div>
-        <button>Sell an App</button>
-    </div>
-);
+export const SellPanel = ({sellApp}) => (
+        <div>
+            <button onClick={sellApp}>Sell an App</button>
+        </div>
+    );
+;

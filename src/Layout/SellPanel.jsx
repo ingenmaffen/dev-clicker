@@ -2,7 +2,7 @@ import { useState } from "react";
 import { developableAppProperties, getAppByType } from "../Common/DevelopableAppProperties";
 
 export const SellPanel = ({moneyState, setMoneyState, appState, setAppState}) => {
-    const [selectedAppType, setSelectedAppType] = useState();
+    const [selectedAppType, setSelectedAppType] = useState("small");
     const currentAppValue = 10;
     const handleAppTypeChangedEvent = (event) => setSelectedAppType(event.target.value);
     const sellApp = () => {
@@ -20,12 +20,11 @@ export const SellPanel = ({moneyState, setMoneyState, appState, setAppState}) =>
     return (
         <div className="sell-app-panel">
             <select value={selectedAppType} onChange={handleAppTypeChangedEvent}>
-                <option></option>
                 {developableAppProperties.map(app =>
                     <option key={app.type} value={app.type}>Sell {app.type} App: {appState[app.type]}</option>
                 )}
             </select>
-            <button onClick={sellApp}>Sell App</button>
+            <button disabled={!appState[selectedAppType]} onClick={sellApp}>Sell App</button>
         </div>
     );
 };

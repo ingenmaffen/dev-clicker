@@ -24,6 +24,6 @@ const developableApp = [
 
 export const DevelopPanel = () => (
     <div className="develop-panel">
-        {developableApp.map(app => <DevelopAppButton {...app} />)}
+        {developableApp.map(app => <DevelopAppButton key={app.text} {...app} />)}
     </div>
 );

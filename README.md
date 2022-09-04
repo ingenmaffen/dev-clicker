@@ -8,4 +8,9 @@ For the sake of retain simplicity, I will not add Redux to the code base until i
 
 ## Acknowledgement
 
-Favicon: [Freepik @ Flaticon](https://www.flaticon.com/free-icon/coding_1159283)
+- Favicon: [Freepik @ Flaticon (coding)](https://www.flaticon.com/free-icon/coding_1159283)
+- Resources Panel Icons: [Freepik @ Flaticon (web development icon pack)](https://www.flaticon.com/packs/web-development-19)
+    - [Developer](https://www.flaticon.com/free-icon/coding_921579)
+    - [Tester](https://www.flaticon.com/free-icon/bug_921564)
+    - [Business Analyst](https://www.flaticon.com/free-icon/analytics_921591)
+    - [Product Owner](https://www.flaticon.com/free-icon/user_921567)

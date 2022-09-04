@@ -1,18 +1,22 @@
 export const humanResourceProperties = [
     {
         type: "developer",
-        displayText: "Developer"
+        displayText: "Developer",
+        icon: "assets/coding.png"
     },
     {
         type: "tester",
-        displayText: "Tester"
+        displayText: "Tester",
+        icon: "assets/bug.png"
     },
     {
         type: "businessAnalyst",
-        displayText: "Business Analyst"
+        displayText: "Business Analyst",
+        icon: "assets/analytics.png"
     },
     {
         type: "productOwner",
-        displayText: "Product Owner"
+        displayText: "Product Owner",
+        icon: "assets/user.png"
     }
 ];

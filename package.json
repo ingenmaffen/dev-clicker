@@ -1,7 +1,7 @@
 {
   "name": "dev-clicker",
   "description": "An idle game based on software development",
-  "version": "0.1.0",
+  "version": "0.7.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

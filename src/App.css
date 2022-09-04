@@ -17,3 +17,9 @@ body, html {
 .main-content > * {
   flex: 1;
 }
+
+@media (orientation: portrait) {
+  .main-content {
+    flex-direction: column;
+  }
+}

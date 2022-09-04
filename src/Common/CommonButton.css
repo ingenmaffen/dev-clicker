@@ -5,6 +5,8 @@
     padding: 5px;
     border-radius: 12px;
     box-shadow: 2px 2px rgba(255,255,255, 0.25);
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .common-button:not([disabled]) {

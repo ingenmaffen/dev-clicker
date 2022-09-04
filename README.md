@@ -2,9 +2,29 @@
 
 An idle game based on software development. The game is available at [https://dev-clicker.web.app/](https://dev-clicker.web.app/)
 
+## Roadmap
+
+- 0.8
+    - Add app sell-rate to sell panel (stock market minigame)
+    - Add tooltips on hover, to show extra info about a Resource or App
+    - Add autosave feature (and savestates in general)
+- 0.9
+    - Add Business Analyst functionality (they handle selling the apps)
+    - Add monthly cost for hiring a resource
+    - Add functionality to fire a person
+    - Add functionality that people quit if they are not paid at the end of the month
+- 1.0
+    - Add developer availability (only unoccupied resources can join the development of a new project)
+    - Add on-going app type
+    - Fix responsivity issues
+- 1.1
+    - Add developer morale
+    - Add scrum master
+    - Make developer salary rise every year
+
 ## Notes
 
-For the sake of retain simplicity, I will not add Redux to the code base until it is mostly done.
+For the sake of retaining simplicity, I will not add Redux to the code base until the game is mostly done.
 
 ## Acknowledgement
 

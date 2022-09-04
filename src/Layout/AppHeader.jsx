@@ -2,6 +2,9 @@ import "./AppHeader.css";
 
 export const AppHeader = ({money}) => (
     <>
+        <a href="https://github.com/ingenmaffen/dev-clicker" className="source">
+            https://github.com/ingenmaffen/dev-clicker
+        </a>
         <h1 className="title">
             <img className="logo" src={"logo512.png"} alt={"logo"} />
             <span>Dev Clicker</span>

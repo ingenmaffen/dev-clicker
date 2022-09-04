@@ -32,3 +32,10 @@
     text-align: left;
     margin-left: 10px;
 }
+
+.source {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  color: white;
+}

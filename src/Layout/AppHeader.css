@@ -1,5 +1,19 @@
-.title {
-    
+@font-face {
+    font-family: computerPixel;
+    src: url("../assets/fonts/ComputerPixel/computer_pixel-7.ttf");
+}
+
+.title span {
+    margin-left: 10px;
+    font-size: 92px;
+    vertical-align: middle;
+    font-family: computerPixel;
+}
+
+.title .logo {
+    width: 64px;
+    height: 64px;
+    vertical-align: middle;
 }
 
 .info-container {
@@ -11,6 +25,9 @@
 }
 
 .info-container .money-container {
+    font-family: computerPixel;
+    font-size: 32px;
     flex: 1;
     text-align: left;
+    margin-left: 10px;
 }

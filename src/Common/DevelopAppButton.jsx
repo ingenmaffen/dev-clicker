@@ -1,5 +1,5 @@
 import './DevelopAppButton.css';
 
-export const DevelopAppButton = ({text}) => (
-    <button className="develop-app-button">{text}</button>
+export const DevelopAppButton = ({text, numberOfApps, onClick, type}) => (
+    <button onClick={() => onClick(type)} className="develop-app-button">{text}: {numberOfApps}</button>
 );

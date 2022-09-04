@@ -1,0 +1,16 @@
+.title {
+    
+}
+
+.info-container {
+    display: flex;
+}
+
+.info-container .placeholder {
+    flex: 2;
+}
+
+.info-container .money-container {
+    flex: 1;
+    text-align: left;
+}

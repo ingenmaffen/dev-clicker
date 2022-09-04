@@ -5,6 +5,7 @@ import { getGameState } from './Common/GameState';
 import { DevelopPanel } from './Layout/DevelopPanel';
 import { ResourcePanel } from './Layout/ResourcePanel';
 import { SellPanel } from './Layout/SellPanel';
+import { AppHeader } from './Layout/AppHeader';
 
 const App = () => {
   const gameState = getGameState();
@@ -14,7 +15,7 @@ const App = () => {
 
   return (
     <>
-      <div>Money: ${currentMoney}</div>
+      <AppHeader money={currentMoney} />
       <div className="main-content">
         <DevelopPanel appState={currentApps} setAppState={setCurrentApps} humanResources={currentResources} />
         <SellPanel moneyState={currentMoney} setMoneyState={setCurrentMoney} appState={currentApps} setAppState={setCurrentApps} />

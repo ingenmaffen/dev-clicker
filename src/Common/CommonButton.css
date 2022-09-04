@@ -3,6 +3,12 @@
     height: 56px;
     display: flex;
     padding: 5px;
+    border-radius: 12px;
+    box-shadow: 2px 2px rgba(255,255,255, 0.25);
+}
+
+.common-button:not([disabled]) {
+    cursor: pointer;
 }
 
 .common-button .left-side img {

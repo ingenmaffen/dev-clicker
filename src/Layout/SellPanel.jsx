@@ -1,3 +1,4 @@
+import "./SellPanel.css";
 import { useState } from "react";
 import { developableAppProperties, getAppByType } from "../Common/DevelopableAppProperties";
 

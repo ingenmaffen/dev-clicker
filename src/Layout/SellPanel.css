@@ -1,0 +1,13 @@
+.sell-app-panel {
+    display: flex;
+    height: 36px;
+    column-gap: 10px;
+}
+
+.sell-app-panel select {
+    flex: 5;
+}
+
+.sell-app-panel button {
+    flex: 1;
+}

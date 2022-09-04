@@ -1,28 +1,28 @@
-.hire-person-button {
+.common-button {
     width: 100%;
     height: 56px;
     display: flex;
     padding: 5px;
 }
 
-.hire-person-button .left-side img {
+.common-button .left-side img {
     width: 40px;
     height: 40px;
     vertical-align: bottom;
 }
 
-.hire-person-button .left-side span {
+.common-button .left-side span {
     font-size: 32px;
     margin-left: 10px;
 }
 
-.hire-person-button .left-side {
+.common-button .left-side {
     flex: 2;
     text-align: left;
     white-space: nowrap;
 }
 
-.hire-person-button .right-side {
+.common-button .right-side {
     flex: 5;
     vertical-align: top;
     font-size: 32px;

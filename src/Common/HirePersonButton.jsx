@@ -1,7 +1,7 @@
-import './HirePersonButton.css';
+import './CommonButton.css';
 
 export const HirePersonButton = ({displayText, numberOfResources, onClick, icon}) => (
-    <button onClick={onClick} className="hire-person-button">
+    <button onClick={onClick} className="common-button">
         <div className="left-side">
             <img src={icon} alt={displayText} />
             <span>{displayText}</span>

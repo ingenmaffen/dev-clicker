@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import './DevelopAppButton.css';
+import './CommonButton.css';
 
-export const DevelopAppButton = ({incrementAppByType, type, humanResources, requiredDevelopers, time}) => {
+export const DevelopAppButton = ({incrementAppByType, type, icon, humanResources, requiredDevelopers, time}) => {
     const [timer, setTimer] = useState(0);
     const getButtonDisabledState = () => {
         return requiredDevelopers > humanResources.developer || timer > 0;
@@ -36,9 +36,13 @@ export const DevelopAppButton = ({incrementAppByType, type, humanResources, requ
     return (
         <button
             onClick={handleClick}
-            className="develop-app-button"
+            className="common-button"
             disabled={getButtonDisabledState()}>
-                Develop {type} App {formatTime(timer)}
+            <div className="left-side">
+                <img src={icon} alt={type} />
+                <span>Develop {type} App</span>
+            </div>
+            <div className="right-side">{formatTime(timer)}</div>
         </button>
     );
 };

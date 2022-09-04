@@ -15,7 +15,7 @@ export const DevelopAppButton = ({incrementAppByType, type, humanResources, requ
                 setTimer(0);
                 incrementAppByType(type);
             }
-        }, 100);
+        }, 1000);
     }
 
     const handleClick = () => {

@@ -17,8 +17,8 @@ export const developableAppProperties = [
         text: "Develop large app",
         type: "large",
         time: 300,
-        valueMultiplier: 1,
-        requiredDevelopers: 5
+        valueMultiplier: 10,
+        requiredDevelopers: 5,
     }
 ];
 

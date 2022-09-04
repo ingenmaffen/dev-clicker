@@ -16,9 +16,9 @@ const App = () => {
     <>
       <div>Money: ${currentMoney}</div>
       <div className="main-content">
-        <DevelopPanel appState={currentApps} setAppState={setCurrentApps} />
+        <DevelopPanel appState={currentApps} setAppState={setCurrentApps} humanResources={currentResources} />
         <SellPanel moneyState={currentMoney} setMoneyState={setCurrentMoney} appState={currentApps} setAppState={setCurrentApps} />
-        <ResourcePanel />
+        <ResourcePanel humanResourceState={currentResources} setHumanResourceState={setCurrentResources} />
       </div>
     </>
   );

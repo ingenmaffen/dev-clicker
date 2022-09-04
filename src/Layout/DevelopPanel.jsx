@@ -2,7 +2,7 @@ import './DevelopPanel.css';
 import { DevelopAppButton } from "../Common/DevelopAppButton";
 import { developableAppProperties } from "../Common/DevelopableAppProperties";
 
-export const DevelopPanel = ({appState, setAppState}) => {
+export const DevelopPanel = ({appState, setAppState, humanResources}) => {
     const developApp = (appType) => {
         const updatedAppState = {
             ...appState,
@@ -14,7 +14,7 @@ export const DevelopPanel = ({appState, setAppState}) => {
     return (
         <div className="develop-panel">
             {developableAppProperties.map(app =>
-                <DevelopAppButton onClick={developApp} numberOfApps={appState[app.type]} key={app.type} {...app} />
+                <DevelopAppButton humanResources={humanResources} incrementAppByType={developApp} key={app.type} {...app} />
             )}
         </div>
     );

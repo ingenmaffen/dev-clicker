@@ -1,24 +1,26 @@
 import './ResourcePanel.css';
+import { humanResourceProperties } from "../Common/HumanResourceProperties";
 import { HirePersonButton } from "../Common/HirePersonButton";
 
-const humanResources = [
-    {
-        text: "Hire a developer"
-    },
-    {
-        text: "Hire a Tester"
-    },
-    {
-        text: "Hire a Business Analyst"
-    },
-    {
-        text: "Hire a Product Owner"
+
+export const ResourcePanel = ({humanResourceState, setHumanResourceState}) => {
+    const buyHumanResource = (type) => {
+        const updatedResourceState = {
+            ...humanResourceState,
+            [type]: humanResourceState[type] + 1
+        };
+        setHumanResourceState(updatedResourceState);
     }
-];
 
-
-export const ResourcePanel = () => (
-    <div className="human-resources-panel">
-        {humanResources.map(person => <HirePersonButton key={person.text} {...person} />)}
-    </div>
-);
+    return (
+        <div className="human-resources-panel">
+            {humanResourceProperties.map(person =>
+                <HirePersonButton
+                    onClick={() => buyHumanResource(person.type)}
+                    key={person.type}
+                    numberOfResources={humanResourceState[person.type]}
+                    {...person} />
+            )}
+        </div>
+    );
+};

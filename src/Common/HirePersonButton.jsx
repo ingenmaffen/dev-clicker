@@ -1,5 +1,5 @@
 import './HirePersonButton.css';
 
-export const HirePersonButton = ({text}) => (
-    <button className="hire-person-button">{text}</button>
+export const HirePersonButton = ({displayText, numberOfResources, onClick}) => (
+    <button onClick={onClick} className="hire-person-button">{displayText}: {numberOfResources}</button>
 );

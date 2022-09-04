@@ -1,6 +1,6 @@
 # Dev Clicker
 
-An idle game based on software development
+An idle game based on software development. The game is available at [https://dev-clicker.web.app/](https://dev-clicker.web.app/)
 
 ## Notes
 

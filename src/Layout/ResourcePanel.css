@@ -1,0 +1,8 @@
+.human-resources-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.human-resources-panel > * {
+    margin-bottom: 10px;
+}

@@ -1,6 +1,11 @@
 const initialGameState = {
   money: 0,
-  developer: 0,
+  humanResources: {
+    softwareEngineer: 0,
+    qualityAssurance: 0,
+    productOwner: 0,
+    businessAnalyst: 0,
+  },
   apps: {
     small: 0,
     medium: 0,

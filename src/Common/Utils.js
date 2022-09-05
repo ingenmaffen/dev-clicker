@@ -5,7 +5,7 @@ export const formatTime = (currentTime) => {
 export const formatTimeWithoutParenthesis = (currentTime) => {
     const minute = Math.floor(currentTime / 60);
     const second = currentTime % 60;
-    return currentTime > 0 ? `${formatNumberToString(minute)}:${formatNumberToString(second)}` : '';
+    return currentTime >= 0 ? `${formatNumberToString(minute)}:${formatNumberToString(second)}` : '';
 }
 
 const formatNumberToString = (number) => {

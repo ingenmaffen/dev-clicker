@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { formatTime } from "./Utils";
 import './CommonButton.css';
 
 export const DevelopAppButton = ({incrementAppByType, type, icon, humanResources, requiredDevelopers, time}) => {
@@ -21,16 +22,6 @@ export const DevelopAppButton = ({incrementAppByType, type, icon, humanResources
     const handleClick = () => {
         setTimer(time);
         decreaseTimerValue(time - 1);
-    }
-
-    const formatTime = (currentTime) => {
-        const minute = Math.floor(currentTime / 60);
-        const second = currentTime % 60;
-        return currentTime > 0 ? `(${formatNumberToString(minute)}:${formatNumberToString(second)})` : '';
-    }
-
-    const formatNumberToString = (number) => {
-        return number < 10 ? `0${number}` : `${number}`;
     }
 
     return (

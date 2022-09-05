@@ -1,6 +1,16 @@
 import Chart from "react-apexcharts";
+import { formatTimeWithoutParenthesis } from "../Common/Utils";
 
 export const SellPriceChart = () => {
+    const currentTime = new Date();
+    const formattableTime = currentTime.getHours() * 60 + currentTime.getMinutes();
+    const xAxisDateValues = [];
+    const yAxisValues = [];
+    for (let i = 0; i < 10; i++) {
+        xAxisDateValues.unshift(formatTimeWithoutParenthesis(formattableTime - i));
+        yAxisValues.push(Math.ceil(Math.random() * 10));
+    }
+
     const chartData = {
         options: {
             chart: {
@@ -8,13 +18,16 @@ export const SellPriceChart = () => {
                     show: false
                 }
             },
+            tooltip: {
+                enabled: false
+            },
             xaxis: {
-                categories: new Array(30).fill(1)
+                categories: xAxisDateValues
             }
         },
         series: [{
             name: 'App base price',
-            data: new Array(30).fill(1)
+            data: yAxisValues
         }]
     };
 

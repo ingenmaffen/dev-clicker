@@ -1,0 +1,16 @@
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10px;
+    margin: 10px;
+}
+
+.main-content > * {
+    flex: 1;
+}
+
+@media (orientation: portrait) {
+    .main-content {
+        flex-direction: column;
+    }
+}

@@ -17,14 +17,22 @@ An idle game based on software development. The game is available at [https://de
     - Add developer availability (only unoccupied resources can join the development of a new project)
     - Add on-going app type
     - Fix responsivity issues
+    - Make app installable (PWA)
 - 1.1
     - Add developer morale
     - Add scrum master
     - Make developer salary rise every year
+- 1.2
+    - Add prestige system (selling company)
+    - Add passive upgrades
 
 ## Notes
 
 For the sake of retaining simplicity, I will not add Redux to the code base until the game is mostly done.
+
+### Update
+
+I wanted this app to help me learn React but in the process I realized that I don't think I like React that much so I'll switch to Angular for the sake of this project.
 
 ## Acknowledgement
 

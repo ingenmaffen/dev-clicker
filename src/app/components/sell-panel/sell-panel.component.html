@@ -1,1 +1,11 @@
-<p>sell-panel works!</p>
+<div class="sell-app-panel">
+    <div class="sell-controls">
+        <select [(ngModel)]="selectedAppType">
+            <option *ngFor="let app of appTypes" [value]="app.type">Sell {{ app.type }} App: 0</option>
+        </select>
+        <button [disabled]="isSellButtonDisabled" click="sellApp()">Sell App</button>
+    </div>
+    <div>
+        <dc-price-chart></dc-price-chart>
+    </div>
+</div>

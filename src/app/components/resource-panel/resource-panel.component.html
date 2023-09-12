@@ -1,1 +1,9 @@
-<p>resource-panel works!</p>
+<div class="human-resources-panel">
+    <button *ngFor="let resource of humanResources" (click)="hire(resource.type)" class="common-button">
+        <div class="left-side">
+            <img [src]="resource.icon" [alt]="resource.displayText" />
+            <span>{{ resource.displayText }}</span>
+        </div>
+        <div class="right-side">0</div>
+    </button>
+</div>

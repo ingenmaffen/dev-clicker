@@ -1,0 +1,39 @@
+.common-button:not(:disabled) {
+    cursor: pointer;
+}
+
+.common-button {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 56px;
+    display: flex;
+    padding: 5px;
+    border-radius: 12px;
+    box-shadow: 2px 2px rgba(255, 255, 255, 0.25);
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    .left-side {
+        flex: 2;
+        text-align: left;
+        white-space: nowrap;
+
+        img {
+            width: 40px;
+            height: 40px;
+            vertical-align: bottom;
+        }
+
+        span {
+            font-size: 32px;
+            margin-left: 10px;
+        }
+    }
+
+    .right-side {
+        flex: 5;
+        vertical-align: top;
+        font-size: 32px;
+        text-align: right;
+    }
+}

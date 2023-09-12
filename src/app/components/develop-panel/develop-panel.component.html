@@ -1,6 +1,6 @@
 <div class="develop-panel">
     <ng-container *ngFor="let app of appTypes">
-        <button (click)="developApp(app.type)" class="develop-app-button" [disabled]="isButtonDisabled(app.type)">
+        <button (click)="developApp(app.type)" class="common-button" [disabled]="isButtonDisabled(app.type)">
             <div class="left-side">
                 <img [src]="app.icon" [alt]="app.type" />
                 <span>Develop {{ app.type }} App</span>

@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { HumanResource } from "src/app/models/resources.model";
+import { ResourcesService } from "src/app/services/resources.service";
 
 @Component({
     selector: "dc-resource-panel",
@@ -6,28 +8,11 @@ import { Component } from "@angular/core";
     styleUrls: ["./resource-panel.component.scss"],
 })
 export class ResourcePanelComponent {
-    public humanResources = [
-        {
-            type: "developer",
-            displayText: "Developer",
-            icon: "assets/coding.png",
-        },
-        {
-            type: "tester",
-            displayText: "Tester",
-            icon: "assets/bug.png",
-        },
-        {
-            type: "businessAnalyst",
-            displayText: "Business Analyst",
-            icon: "assets/analytics.png",
-        },
-        {
-            type: "productOwner",
-            displayText: "Product Owner",
-            icon: "assets/user.png",
-        },
-    ];
+    public humanResources: HumanResource[];
+
+    constructor(private resourcesService: ResourcesService) {
+        this.humanResources = this.resourcesService.getHumanResources();
+    }
 
     public hire(resourceType: string): void {}
 }

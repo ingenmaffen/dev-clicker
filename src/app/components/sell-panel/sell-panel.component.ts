@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { App, AppType } from "src/app/models/app.model";
+import { AppService } from "src/app/services/app.service";
 
 @Component({
     selector: "dc-sell-panel",
@@ -6,31 +8,13 @@ import { Component } from "@angular/core";
     styleUrls: ["./sell-panel.component.scss"],
 })
 export class SellPanelComponent {
-    public appTypes = [
-        {
-            type: "small",
-            icon: "assets/block.png",
-            time: 60,
-            valueMultiplier: 1,
-            requiredDevelopers: 0,
-        },
-        {
-            type: "medium",
-            icon: "assets/blockchain.png",
-            time: 150,
-            valueMultiplier: 2.5,
-            requiredDevelopers: 3,
-        },
-        {
-            type: "large",
-            icon: "assets/blocks.png",
-            time: 300,
-            valueMultiplier: 10,
-            requiredDevelopers: 5,
-        },
-    ];
+    public appTypes: App[];
 
-    public selectedAppType: string = "small";
+    public selectedAppType: AppType = AppType.SMALL;
+
+    constructor(private appService: AppService) {
+        this.appTypes = this.appService.getApps();
+    }
 
     public get isSellButtonDisabled(): boolean {
         return false;

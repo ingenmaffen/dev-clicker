@@ -3,7 +3,7 @@ import { useState } from "react";
 import { SellPriceChart } from "./SellPriceChart";
 import { developableAppProperties, getAppByType } from "../Common/DevelopableAppProperties";
 
-export const SellPanel = ({moneyState, setMoneyState, appState, setAppState}) => {
+export const SellPanel = ({moneyState, setMoneyState, appState, setAppState, setPriceState}) => {
     const [selectedAppType, setSelectedAppType] = useState("small");
     const currentAppValue = 10;
     const handleAppTypeChangedEvent = (event) => setSelectedAppType(event.target.value);
@@ -30,7 +30,7 @@ export const SellPanel = ({moneyState, setMoneyState, appState, setAppState}) =>
                 <button disabled={!appState[selectedAppType]} onClick={sellApp}>Sell App</button>
             </div>
             <div>
-                <SellPriceChart />
+                <SellPriceChart setPriceState={setPriceState} />
             </div>
         </div>
     );

@@ -12,13 +12,14 @@ const App = () => {
   const [currentMoney, setCurrentMoney] = useState(gameState.money);
   const [currentApps, setCurrentApps] = useState(gameState.apps);
   const [currentResources, setCurrentResources] = useState(gameState.humanResources);
+  const [currentPrice, setCurrentPrice] = useState(0);
 
   return (
     <>
       <AppHeader money={currentMoney} />
       <div className="main-content">
         <DevelopPanel appState={currentApps} setAppState={setCurrentApps} humanResources={currentResources} />
-        <SellPanel moneyState={currentMoney} setMoneyState={setCurrentMoney} appState={currentApps} setAppState={setCurrentApps} />
+        <SellPanel moneyState={currentMoney} setMoneyState={setCurrentMoney} appState={currentApps} setAppState={setCurrentApps} setPriceState={setCurrentPrice} />
         <ResourcePanel humanResourceState={currentResources} setHumanResourceState={setCurrentResources} />
       </div>
     </>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
 import { formatTimeWithoutParenthesis } from "../Common/Utils";
 
@@ -48,22 +48,7 @@ const shiftYValues = (yValues) => {
     yValues.push(getPossibleNextYValue(prevValue));
     return yValues;
 };
-
-export const SellPriceChart = () => {
-    const [xValues, setXValues] = useState(getXValues());
-    const [yValues, setYValues] = useState(getYValues());
-
-    // TODO: fix (maybe use state for chartData)
-    const updateChartValuesWithTimeout = () => {
-        setTimeout(() => {
-            setXValues(shiftXValues(xValues));
-            setYValues(shiftYValues(yValues));
-            updateChartValuesWithTimeout();
-        }, 60 * 1000);
-    };
-
-    updateChartValuesWithTimeout();
-
+const getChartData = (xValues, yValues) => { 
     const chartData = {
         options: {
             chart: {
@@ -83,8 +68,34 @@ export const SellPriceChart = () => {
             data: yValues
         }]
     };
+    return chartData;
+}
+
+
+export const SellPriceChart = ({setPriceState}) => {
+    const [xValues, setXValues] = useState(getXValues());
+    const [yValues, setYValues] = useState(getYValues());
+    const [chartState, setChartState] = useState(getChartData(xValues, yValues));
+
+    const setLatestPrice = () => {
+        const latestPrice = yValues[yValues.length - 1];
+        setPriceState(latestPrice);
+    };
+
+    useEffect(() => {
+        setLatestPrice();
+        const intervalId = setInterval(() => {
+            setXValues(shiftXValues(xValues));
+            setYValues(shiftYValues(yValues));
+            const updatedChartData = getChartData(xValues, yValues);
+            setChartState(updatedChartData);
+            setLatestPrice();
+        }, 60 * 1000);
+        return () => clearInterval(intervalId);
+      }, []);
+    
 
     return (
-        <Chart options={chartData.options} series={chartData.series} type="line" />
+        <Chart options={chartState.options} series={chartState.series} type="line" />
     );
 };

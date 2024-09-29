@@ -1,37 +1,37 @@
 @font-face {
-    font-family: computerPixel;
-    src: url("../assets/fonts/ComputerPixel/computer_pixel-7.ttf");
+  font-family: computerPixel;
+  src: url("../assets/fonts/ComputerPixel/computer_pixel-7.ttf");
 }
 
 .title span {
-    margin-left: 10px;
-    font-size: 92px;
-    vertical-align: middle;
-    font-family: computerPixel;
-    cursor: default;
-    width: 100%;
+  margin-left: 10px;
+  font-size: 92px;
+  vertical-align: middle;
+  font-family: computerPixel;
+  cursor: default;
+  width: 100%;
 }
 
 .title .logo {
-    width: 64px;
-    height: 64px;
-    vertical-align: middle;
+  width: 64px;
+  height: 64px;
+  vertical-align: middle;
 }
 
 .info-container {
-    display: flex;
+  display: flex;
 }
 
 .info-container .placeholder {
-    flex: 2;
+  flex: 2;
 }
 
 .info-container .money-container {
-    font-family: computerPixel;
-    font-size: 32px;
-    flex: 1;
-    text-align: left;
-    margin-left: 10px;
+  font-family: computerPixel;
+  font-size: 32px;
+  flex: 1;
+  text-align: left;
+  margin-left: 10px;
 }
 
 .source {

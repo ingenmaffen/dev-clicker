@@ -10,9 +10,9 @@ const initialGameState = {
     small: 0,
     medium: 0,
     large: 0,
-  }
+  },
 };
 
 export const getGameState = () => {
   return initialGameState;
-}
+};

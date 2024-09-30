@@ -1,6 +1,6 @@
 import "./DevelopPanel.css";
-import { DevelopAppButton } from "../../shared/components/DevelopAppButton";
-import { developableAppProperties } from "../../shared/DevelopableAppProperties";
+import { DevelopAppButton } from "../../shared/components/develop-app-button";
+import { developableApps } from "./app-model";
 
 interface DevelopPanelProps {
   appState: any; // TODO: add proper type
@@ -21,7 +21,7 @@ export const DevelopPanel = (props: DevelopPanelProps) => {
 
   return (
     <div className="develop-panel">
-      {developableAppProperties.map((app) => (
+      {developableApps.map((app) => (
         <DevelopAppButton humanResources={humanResources} incrementAppByType={developApp} key={app.type} {...app} />
       ))}
     </div>

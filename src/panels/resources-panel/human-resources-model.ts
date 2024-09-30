@@ -11,8 +11,7 @@ export interface HumanResource {
   icon: string;
 }
 
-// TODO: rename variable (and file)
-export const humanResourceProperties: HumanResource[] = [
+export const humanResources: HumanResource[] = [
   {
     type: HumanResourceType.DEVELOPER,
     displayText: "Developer",

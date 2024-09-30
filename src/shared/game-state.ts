@@ -1,7 +1,10 @@
+import { AppType } from "../panels/develop-panel/app-model";
+import { HumanResourceType } from "../panels/resources-panel/human-resources-model";
+
 interface GameState {
   money: number;
-  humanResources: any; // TODO: add proper type
-  apps: any; // TODO: add proper type
+  humanResources: { [key in HumanResourceType]?: number };
+  apps: { [key in AppType]?: number };
 }
 
 const initialGameState: GameState = {

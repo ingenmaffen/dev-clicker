@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { formatTime } from "../utils/format-time";
-import { AppType } from "../DevelopableAppProperties";
+import { AppType } from "../../panels/develop-panel/app-model";
 import "../styles/common-button.css";
 
 interface DevelopAppButtonProps {

@@ -12,8 +12,7 @@ export interface App {
   requiredDevelopers: number;
 }
 
-// TODO: rename variable (and file)
-export const developableAppProperties: App[] = [
+export const developableApps: App[] = [
   {
     type: AppType.SMALL,
     icon: "assets/block.png",
@@ -37,4 +36,4 @@ export const developableAppProperties: App[] = [
   },
 ];
 
-export const getAppByType = (appType: AppType): App | undefined => developableAppProperties.find((app) => app.type === appType);
+export const getAppByType = (appType: AppType): App | undefined => developableApps.find((app) => app.type === appType);

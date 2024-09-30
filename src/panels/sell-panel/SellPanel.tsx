@@ -1,7 +1,7 @@
 import "./SellPanel.css";
 import { useState } from "react";
 import { SellPriceChart } from "./SellPriceChart";
-import { AppType, developableAppProperties, getAppByType } from "../../shared/DevelopableAppProperties";
+import { AppType, developableApps, getAppByType } from "../develop-panel/app-model";
 
 interface SellPanelProps {
   moneyState: number;
@@ -32,7 +32,7 @@ export const SellPanel = (props: SellPanelProps) => {
     <div className="sell-app-panel-container">
       <div className="sell-app-panel">
         <select value={selectedAppType} onChange={handleAppTypeChangedEvent}>
-          {developableAppProperties.map((app) => (
+          {developableApps.map((app) => (
             <option key={app.type} value={app.type}>
               Sell {app.type} App: {appState[app.type]}
             </option>

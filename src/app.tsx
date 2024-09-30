@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-import "./App.css";
-import { getGameState } from "./shared/GameState";
+import "./app.css";
+import { getGameState } from "./shared/game-state";
 import { DevelopPanel } from "./panels/develop-panel/DevelopPanel";
 import { ResourcePanel } from "./panels/resources-panel/ResourcePanel";
 import { SellPanel } from "./panels/sell-panel/SellPanel";
-import { AppHeader } from "./panels/header/AppHeader";
+import { Header } from "./panels/header/header";
 
 const App = () => {
   const gameState = getGameState();
@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <>
-      <AppHeader money={currentMoney} />
+      <Header money={currentMoney} />
       <div className="main-content">
         <DevelopPanel appState={currentApps} setAppState={setCurrentApps} humanResources={currentResources} />
         <SellPanel

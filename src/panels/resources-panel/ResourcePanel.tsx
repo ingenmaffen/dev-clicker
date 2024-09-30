@@ -1,6 +1,6 @@
 import "./ResourcePanel.css";
-import { humanResourceProperties } from "../../shared/HumanResourceProperties";
-import { HirePersonButton } from "../../shared/components/HirePersonButton";
+import { humanResources } from "./human-resources-model";
+import { HirePersonButton } from "../../shared/components/hire-person-button";
 
 interface ResourcePanelProps {
   humanResourceState: any; // TODO
@@ -19,7 +19,7 @@ export const ResourcePanel = (props: ResourcePanelProps) => {
 
   return (
     <div className="human-resources-panel">
-      {humanResourceProperties.map((person) => (
+      {humanResources.map((person) => (
         <HirePersonButton onClick={() => buyHumanResource(person.type)} key={person.type} numberOfResources={humanResourceState[person.type]} {...person} />
       ))}
     </div>

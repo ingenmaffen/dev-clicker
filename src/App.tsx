@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import "./App.css";
 import { getGameState } from "./Common/GameState";
@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <>
-      <AppHeader money={currentMoney} />
+      <AppHeader money={currentMoney}/>
       <div className="main-content">
         <DevelopPanel appState={currentApps} setAppState={setCurrentApps} humanResources={currentResources} />
         <SellPanel

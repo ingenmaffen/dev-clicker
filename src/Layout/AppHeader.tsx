@@ -1,6 +1,7 @@
+import React from "react";
 import "./AppHeader.css";
 
-export const AppHeader = ({ money }) => (
+export const AppHeader = ({money}) => (
   <>
     <a href="https://github.com/ingenmaffen/dev-clicker" className="source">
       https://github.com/ingenmaffen/dev-clicker

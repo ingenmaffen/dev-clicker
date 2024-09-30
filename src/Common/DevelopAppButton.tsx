@@ -1,8 +1,19 @@
 import { useState } from "react";
 import { formatTime } from "./Utils";
+import { AppType } from "./DevelopableAppProperties";
 import "./CommonButton.css";
 
-export const DevelopAppButton = ({ incrementAppByType, type, icon, humanResources, requiredDevelopers, time }) => {
+interface DevelopAppButtonProps {
+  incrementAppByType: any; // TODO: add proper type
+  type: AppType;
+  icon: string;
+  humanResources: any; // TODO: add proper type
+  requiredDevelopers: number;
+  time: number;
+}
+
+export const DevelopAppButton = (props: DevelopAppButtonProps) => {
+  const { incrementAppByType, type, icon, humanResources, requiredDevelopers, time } = props;
   const [timer, setTimer] = useState(0);
   const getButtonDisabledState = () => {
     return requiredDevelopers > humanResources.developer || timer > 0;

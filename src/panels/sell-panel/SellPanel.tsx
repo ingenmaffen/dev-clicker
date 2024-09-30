@@ -1,7 +1,7 @@
 import "./SellPanel.css";
 import { useState } from "react";
 import { SellPriceChart } from "./SellPriceChart";
-import { AppType, developableAppProperties, getAppByType } from "../Common/DevelopableAppProperties";
+import { AppType, developableAppProperties, getAppByType } from "../../shared/DevelopableAppProperties";
 
 interface SellPanelProps {
   moneyState: number;

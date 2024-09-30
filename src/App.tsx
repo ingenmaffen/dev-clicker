@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 import "./App.css";
-import { getGameState } from "./Common/GameState";
-import { DevelopPanel } from "./Layout/DevelopPanel";
-import { ResourcePanel } from "./Layout/ResourcePanel";
-import { SellPanel } from "./Layout/SellPanel";
-import { AppHeader } from "./Layout/AppHeader";
+import { getGameState } from "./shared/GameState";
+import { DevelopPanel } from "./panels/develop-panel/DevelopPanel";
+import { ResourcePanel } from "./panels/resources-panel/ResourcePanel";
+import { SellPanel } from "./panels/sell-panel/SellPanel";
+import { AppHeader } from "./panels/header/AppHeader";
 
 const App = () => {
   const gameState = getGameState();

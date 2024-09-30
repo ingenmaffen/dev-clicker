@@ -1,6 +1,6 @@
 import "./DevelopPanel.css";
-import { DevelopAppButton } from "../Common/DevelopAppButton";
-import { developableAppProperties } from "../Common/DevelopableAppProperties";
+import { DevelopAppButton } from "../../shared/components/DevelopAppButton";
+import { developableAppProperties } from "../../shared/DevelopableAppProperties";
 
 interface DevelopPanelProps {
   appState: any; // TODO: add proper type
@@ -8,6 +8,7 @@ interface DevelopPanelProps {
   humanResources: any; // TODO: add proper type
 }
 
+// TODO: rename (also rename files)
 export const DevelopPanel = (props: DevelopPanelProps) => {
   const { appState, setAppState, humanResources } = props;
   const developApp = (appType) => {

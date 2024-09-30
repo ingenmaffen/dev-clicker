@@ -1,6 +1,6 @@
 import "./ResourcePanel.css";
-import { humanResourceProperties } from "../Common/HumanResourceProperties";
-import { HirePersonButton } from "../Common/HirePersonButton";
+import { humanResourceProperties } from "../../shared/HumanResourceProperties";
+import { HirePersonButton } from "../../shared/components/HirePersonButton";
 
 interface ResourcePanelProps {
   humanResourceState: any; // TODO

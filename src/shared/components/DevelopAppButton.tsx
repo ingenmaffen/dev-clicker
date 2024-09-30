@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { formatTime } from "./Utils";
-import { AppType } from "./DevelopableAppProperties";
-import "./CommonButton.css";
+
+import { formatTime } from "../utils/format-time";
+import { AppType } from "../DevelopableAppProperties";
+import "../styles/common-button.css";
 
 interface DevelopAppButtonProps {
   incrementAppByType: any; // TODO: add proper type

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
-import { formatTimeWithoutParenthesis } from "../Common/Utils";
+import { formatTimeWithoutParenthesis } from "../../shared/utils/format-time";
 
 const getCurrentTimeFormattable = () => {
   const currentTime = new Date();

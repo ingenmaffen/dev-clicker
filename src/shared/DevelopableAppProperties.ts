@@ -12,6 +12,7 @@ export interface App {
   requiredDevelopers: number;
 }
 
+// TODO: rename variable (and file)
 export const developableAppProperties: App[] = [
   {
     type: AppType.SMALL,

@@ -1,5 +1,6 @@
-import "./CommonButton.css";
 import { MouseEventHandler } from "react";
+
+import "../styles/common-button.css";
 
 interface HirePersonProps {
   displayText: string;

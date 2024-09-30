@@ -36,6 +36,7 @@ export const DevelopAppButton = (props: DevelopAppButtonProps) => {
     decreaseTimerValue(time - 1);
   };
 
+  // TODO: button shouldn't be disabled; clicking on it should decrease the timer (if no timer is present, set it first)
   return (
     <button onClick={handleClick} className="common-button" disabled={getButtonDisabledState()}>
       <div className="left-side">

@@ -7,9 +7,9 @@ const getCurrentTimeFormattable = () => {
   return currentTime.getHours() * 60 + currentTime.getMinutes();
 };
 
-const getXValues = () => {
+const getXValues = (): string[] => {
   const formattableTime = getCurrentTimeFormattable();
-  const xAxisDateValues = [];
+  const xAxisDateValues: string[] = [];
   for (let i = 0; i < 10; i++) {
     let prevTimeValue = formattableTime - i;
     prevTimeValue = prevTimeValue < 0 ? prevTimeValue + 24 * 60 : prevTimeValue;
@@ -18,14 +18,14 @@ const getXValues = () => {
   return xAxisDateValues;
 };
 
-const shiftXValues = (xValues) => {
+const shiftXValues = (xValues: string[]): string[] => {
   xValues.shift();
   xValues.push(formatTimeWithoutParenthesis(getCurrentTimeFormattable()));
   return xValues;
 };
 
-const getYValues = () => {
-  const yAxisValues = [];
+const getYValues = (): number[] => {
+  const yAxisValues: number[] = [];
   yAxisValues.push(15 + Math.ceil(Math.random() * 10));
   for (let i = 1; i < 10; i++) {
     yAxisValues.push(getPossibleNextYValue(yAxisValues[i - 1]));
@@ -33,7 +33,7 @@ const getYValues = () => {
   return yAxisValues;
 };
 
-const getPossibleNextYValue = (prevValue) => {
+const getPossibleNextYValue = (prevValue: number): number => {
   const minValue = 5;
   const maxValue = 250;
   let possibleNextValue = prevValue - Math.ceil(Math.random() * 15) + Math.ceil(Math.random() * 15);
@@ -42,13 +42,19 @@ const getPossibleNextYValue = (prevValue) => {
   return possibleNextValue;
 };
 
-const shiftYValues = (yValues) => {
+const shiftYValues = (yValues: number[]): number[] => {
   yValues.shift();
   const prevValue = yValues[yValues.length - 1];
   yValues.push(getPossibleNextYValue(prevValue));
   return yValues;
 };
-const getChartData = (xValues, yValues) => {
+
+interface ChartData {
+  options: ApexCharts.ApexOptions;
+  series: ApexAxisChartSeries;
+}
+
+const getChartData = (xValues: string[], yValues: number[]): ChartData => {
   const chartData = {
     options: {
       chart: {
@@ -73,7 +79,12 @@ const getChartData = (xValues, yValues) => {
   return chartData;
 };
 
-export const SellPriceChart = ({ setPriceState }) => {
+interface SellChartProps {
+  setPriceState: any; // TODO
+}
+
+export const SellPriceChart = (props: SellChartProps) => {
+  const { setPriceState } = props;
   const [xValues, setXValues] = useState(getXValues());
   const [yValues, setYValues] = useState(getYValues());
   const [chartState, setChartState] = useState(getChartData(xValues, yValues));

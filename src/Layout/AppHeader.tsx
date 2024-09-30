@@ -1,7 +1,11 @@
 import React from "react";
 import "./AppHeader.css";
 
-export const AppHeader = ({money}) => (
+interface AppHeaderProps {
+  money: number;
+}
+
+export const AppHeader = ({ money }: AppHeaderProps) => (
   <>
     <a href="https://github.com/ingenmaffen/dev-clicker" className="source">
       https://github.com/ingenmaffen/dev-clicker

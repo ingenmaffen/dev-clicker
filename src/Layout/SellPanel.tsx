@@ -1,10 +1,19 @@
 import "./SellPanel.css";
 import { useState } from "react";
 import { SellPriceChart } from "./SellPriceChart";
-import { developableAppProperties, getAppByType } from "../Common/DevelopableAppProperties";
+import { AppType, developableAppProperties, getAppByType } from "../Common/DevelopableAppProperties";
 
-export const SellPanel = ({ moneyState, setMoneyState, appState, setAppState, setPriceState }) => {
-  const [selectedAppType, setSelectedAppType] = useState("small");
+interface SellPanelProps {
+  moneyState: number;
+  setMoneyState: any; // TODO
+  appState: any; // TODO
+  setAppState: any; // TODO
+  setPriceState: any; // TODO
+}
+
+export const SellPanel = (props: SellPanelProps) => {
+  const { moneyState, setMoneyState, appState, setAppState, setPriceState } = props;
+  const [selectedAppType, setSelectedAppType] = useState(AppType.SMALL);
   const currentAppValue = 10;
   const handleAppTypeChangedEvent = (event) => setSelectedAppType(event.target.value);
   const sellApp = () => {
@@ -13,7 +22,7 @@ export const SellPanel = ({ moneyState, setMoneyState, appState, setAppState, se
         ...appState,
         [selectedAppType]: appState[selectedAppType] - 1,
       };
-      const appValue = getAppByType(selectedAppType).valueMultiplier * currentAppValue;
+      const appValue = getAppByType(selectedAppType)!.valueMultiplier * currentAppValue; // TODO: check if can be undefined
       setAppState(updatedAppState);
       setMoneyState(moneyState + appValue);
     }

@@ -3,12 +3,13 @@ import { useState } from "react";
 import { formatTime } from "../utils/format-time";
 import { AppType } from "../../panels/develop-panel/app-model";
 import "../styles/common-button.css";
+import { HumanResourceState } from "../game-state";
 
 interface DevelopAppButtonProps {
-  incrementAppByType: any; // TODO: add proper type
+  incrementAppByType: Function;
   type: AppType;
   icon: string;
-  humanResources: any; // TODO: add proper type
+  humanResources: HumanResourceState;
   requiredDevelopers: number;
   time: number;
 }
@@ -17,7 +18,7 @@ export const DevelopAppButton = (props: DevelopAppButtonProps) => {
   const { incrementAppByType, type, icon, humanResources, requiredDevelopers, time } = props;
   const [timer, setTimer] = useState(0);
   const getButtonDisabledState = () => {
-    return requiredDevelopers > humanResources.developer || timer > 0;
+    return requiredDevelopers > humanResources.developer! || timer > 0;
   };
 
   const decreaseTimerValue = (newValue) => {

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
 import { formatTimeWithoutParenthesis } from "../../../shared/utils/format-time";
+import { ReactSetFunction } from "../../../shared/react-override";
 
 const getCurrentTimeFormattable = () => {
   const currentTime = new Date();
@@ -80,7 +81,7 @@ const getChartData = (xValues: string[], yValues: number[]): ChartData => {
 };
 
 export interface SellChartProps {
-  setPriceState: any; // TODO
+  setPriceState: ReactSetFunction<number>;
 }
 
 export const SellPriceChart = (props: SellChartProps) => {

@@ -2,6 +2,4 @@ import { HumanResources, HumanResourcesProps } from "./components/human-resource
 
 interface ResourcePanelProps extends HumanResourcesProps {}
 
-export const ResourcesPanel = ({ humanResourceState, setHumanResourceState }: ResourcePanelProps) => (
-  <HumanResources humanResourceState={humanResourceState} setHumanResourceState={setHumanResourceState} />
-);
+export const ResourcesPanel = (props: ResourcePanelProps) => <HumanResources {...props} />;

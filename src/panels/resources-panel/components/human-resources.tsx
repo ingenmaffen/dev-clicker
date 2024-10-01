@@ -1,10 +1,12 @@
 import "./human-resources.css";
 import { humanResources } from "../human-resources-model";
 import { HirePersonButton } from "../../../shared/components/hire-person-button";
+import { HumanResourceState } from "../../../shared/game-state";
+import { ReactSetFunction } from "../../../shared/react-override";
 
 export interface HumanResourcesProps {
-  humanResourceState: any; // TODO
-  setHumanResourceState: any; // TODO
+  humanResourceState: HumanResourceState;
+  setHumanResourceState: ReactSetFunction<HumanResourceState>;
 }
 
 export const HumanResources = (props: HumanResourcesProps) => {
@@ -20,7 +22,7 @@ export const HumanResources = (props: HumanResourcesProps) => {
   return (
     <div className="human-resources-panel">
       {humanResources.map((person) => (
-        <HirePersonButton onClick={() => buyHumanResource(person.type)} key={person.type} numberOfResources={humanResourceState[person.type]} {...person} />
+        <HirePersonButton onClick={() => buyHumanResource(person.type)} key={person.type} numberOfResources={humanResourceState[person.type]!} {...person} />
       ))}
     </div>
   );

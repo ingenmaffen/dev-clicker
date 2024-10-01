@@ -1,12 +1,14 @@
 import "./sell-controls.css";
 import { useState } from "react";
 import { AppType, developableApps, getAppByType } from "../../develop-panel/app-model";
+import { ReactSetFunction } from "../../../shared/react-override";
+import { AppState } from "../../../shared/game-state";
 
 export interface SellControlProps {
   moneyState: number;
-  setMoneyState: any; // TODO
-  appState: any; // TODO
-  setAppState: any; // TODO
+  setMoneyState: ReactSetFunction<number>;
+  appState: AppState;
+  setAppState: ReactSetFunction<AppState>;
 }
 
 export const SellControls = (props: SellControlProps) => {
@@ -18,9 +20,9 @@ export const SellControls = (props: SellControlProps) => {
     if (selectedAppType) {
       const updatedAppState = {
         ...appState,
-        [selectedAppType]: appState[selectedAppType] - 1,
+        [selectedAppType]: appState[selectedAppType]! - 1,
       };
-      const appValue = getAppByType(selectedAppType)!.valueMultiplier * currentAppValue; // TODO: check if can be undefined
+      const appValue = getAppByType(selectedAppType)!.valueMultiplier * currentAppValue;
       setAppState(updatedAppState);
       setMoneyState(moneyState + appValue);
     }

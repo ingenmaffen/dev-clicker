@@ -1,11 +1,13 @@
 import "./app-list.css";
 import { DevelopAppButton } from "../../../shared/components/develop-app-button";
 import { developableApps } from "../app-model";
+import { AppState, HumanResourceState } from "../../../shared/game-state";
+import { ReactSetFunction } from "../../../shared/react-override";
 
 export interface AppListProps {
-  appState: any; // TODO: add proper type
-  setAppState: any; // TODO: add proper type... also consider renaming stuff, maybe?
-  humanResources: any; // TODO: add proper type
+  appState: AppState;
+  setAppState: ReactSetFunction<AppState>;
+  humanResources: HumanResourceState;
 }
 
 export const AppList = (props: AppListProps) => {

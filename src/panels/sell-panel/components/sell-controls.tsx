@@ -1,6 +1,5 @@
 import "./sell-controls.css";
 import { useState } from "react";
-import { SellPriceChart } from "./sell-pricechart";
 import { AppType, developableApps, getAppByType } from "../../develop-panel/app-model";
 
 export interface SellControlProps {
@@ -8,11 +7,10 @@ export interface SellControlProps {
   setMoneyState: any; // TODO
   appState: any; // TODO
   setAppState: any; // TODO
-  setPriceState: any; // TODO
 }
 
 export const SellControls = (props: SellControlProps) => {
-  const { moneyState, setMoneyState, appState, setAppState, setPriceState } = props;
+  const { moneyState, setMoneyState, appState, setAppState } = props;
   const [selectedAppType, setSelectedAppType] = useState(AppType.SMALL);
   const currentAppValue = 10;
   const handleAppTypeChangedEvent = (event) => setSelectedAppType(event.target.value);
@@ -29,22 +27,17 @@ export const SellControls = (props: SellControlProps) => {
   };
 
   return (
-    <div className="sell-app-panel-container">
-      <div className="sell-app-panel">
-        <select value={selectedAppType} onChange={handleAppTypeChangedEvent}>
-          {developableApps.map((app) => (
-            <option key={app.type} value={app.type}>
-              Sell {app.type} App: {appState[app.type]}
-            </option>
-          ))}
-        </select>
-        <button disabled={!appState[selectedAppType]} onClick={sellApp}>
-          Sell App
-        </button>
-      </div>
-      <div>
-        <SellPriceChart setPriceState={setPriceState} />
-      </div>
-    </div>
+    <>
+      <select className="sell-app-selector" value={selectedAppType} onChange={handleAppTypeChangedEvent}>
+        {developableApps.map((app) => (
+          <option key={app.type} value={app.type}>
+            Sell {app.type} App: {appState[app.type]}
+          </option>
+        ))}
+      </select>
+      <button className="sell-app-button" disabled={!appState[selectedAppType]} onClick={sellApp}>
+        Sell App
+      </button>
+    </>
   );
 };

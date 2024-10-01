@@ -1,0 +1,12 @@
+.sell-app-panel-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.sell-app-panel {
+  display: flex;
+  height: 36px;
+  column-gap: 10px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}

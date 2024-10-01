@@ -79,7 +79,7 @@ const getChartData = (xValues: string[], yValues: number[]): ChartData => {
   return chartData;
 };
 
-interface SellChartProps {
+export interface SellChartProps {
   setPriceState: any; // TODO
 }
 

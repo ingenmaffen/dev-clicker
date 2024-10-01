@@ -1,29 +1,16 @@
-.sell-app-panel-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.sell-app-panel {
-  display: flex;
-  height: 36px;
-  column-gap: 10px;
-  margin-top: 4px;
-  margin-bottom: 10px;
-}
-
-.sell-app-panel select {
+.sell-app-selector {
   flex: 5;
   border-radius: 8px;
   font-size: 18px;
 }
 
-.sell-app-panel button {
+.sell-app-button {
   flex: 1;
   font-size: 18px;
   border-radius: 8px;
   box-shadow: 2px 2px rgba(255, 255, 255, 0.25);
 }
 
-.sell-app-panel button:not([disabled]) {
+.sell-app-button:not([disabled]) {
   cursor: pointer;
 }

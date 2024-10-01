@@ -1,5 +1,5 @@
-import { SellControlProps, SellControls } from "./components/sell-controls";
-import { SellChartProps, SellPriceChart } from "./components/sell-pricechart";
+import { SellControlProps, SellControls } from "./components/sell-controls/sell-controls";
+import { SellChartProps, SellPriceChart } from "./components/sell-pricechart/sell-pricechart";
 
 import "./sell-panel.css";
 

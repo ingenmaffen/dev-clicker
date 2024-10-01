@@ -1,8 +1,8 @@
 import "./sell-controls.css";
 import { useState } from "react";
-import { AppType, developableApps, getAppByType } from "../../develop-panel/app-model";
-import { ReactSetFunction } from "../../../shared/react-override";
-import { AppState } from "../../../shared/game-state";
+import { AppType, developableApps, getAppByType } from "../../../develop-panel/app-model";
+import { ReactSetFunction } from "../../../../shared/react-override";
+import { AppState } from "../../../../shared/game-state";
 
 export interface SellControlProps {
   moneyState: number;

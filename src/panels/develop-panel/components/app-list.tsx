@@ -1,15 +1,14 @@
-import "./DevelopPanel.css";
-import { DevelopAppButton } from "../../shared/components/develop-app-button";
-import { developableApps } from "./app-model";
+import "./app-list.css";
+import { DevelopAppButton } from "../../../shared/components/develop-app-button";
+import { developableApps } from "../app-model";
 
-interface DevelopPanelProps {
+export interface AppListProps {
   appState: any; // TODO: add proper type
   setAppState: any; // TODO: add proper type... also consider renaming stuff, maybe?
   humanResources: any; // TODO: add proper type
 }
 
-// TODO: rename (also rename files)
-export const DevelopPanel = (props: DevelopPanelProps) => {
+export const AppList = (props: AppListProps) => {
   const { appState, setAppState, humanResources } = props;
   const developApp = (appType) => {
     const updatedAppState = {

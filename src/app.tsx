@@ -2,10 +2,10 @@ import { useState } from "react";
 
 import "./app.css";
 import { getGameState } from "./shared/game-state";
-import { DevelopPanel } from "./panels/develop-panel/DevelopPanel";
-import { ResourcePanel } from "./panels/resources-panel/ResourcePanel";
-import { SellPanel } from "./panels/sell-panel/SellPanel";
 import { Header } from "./panels/header/header";
+import { DevelopPanel } from "./panels/develop-panel/develop-panel";
+import { ResourcesPanel } from "./panels/resources-panel/resources-panel";
+import { SellPanel } from "./panels/sell-panel/sell-panel";
 
 const App = () => {
   const gameState = getGameState();
@@ -26,7 +26,7 @@ const App = () => {
           setAppState={setCurrentApps}
           setPriceState={setCurrentPrice}
         />
-        <ResourcePanel humanResourceState={currentResources} setHumanResourceState={setCurrentResources} />
+        <ResourcesPanel humanResourceState={currentResources} setHumanResourceState={setCurrentResources} />
       </div>
     </>
   );

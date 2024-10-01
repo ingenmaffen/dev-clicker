@@ -1,13 +1,13 @@
-import "./ResourcePanel.css";
-import { humanResources } from "./human-resources-model";
-import { HirePersonButton } from "../../shared/components/hire-person-button";
+import "./human-resources.css";
+import { humanResources } from "../human-resources-model";
+import { HirePersonButton } from "../../../shared/components/hire-person-button";
 
-interface ResourcePanelProps {
+export interface HumanResourcesProps {
   humanResourceState: any; // TODO
   setHumanResourceState: any; // TODO
 }
 
-export const ResourcePanel = (props: ResourcePanelProps) => {
+export const HumanResources = (props: HumanResourcesProps) => {
   const { humanResourceState, setHumanResourceState } = props;
   const buyHumanResource = (type) => {
     const updatedResourceState = {

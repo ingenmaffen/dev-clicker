@@ -1,9 +1,9 @@
-import "./SellPanel.css";
+import "./sell-controls.css";
 import { useState } from "react";
-import { SellPriceChart } from "./SellPriceChart";
-import { AppType, developableApps, getAppByType } from "../develop-panel/app-model";
+import { SellPriceChart } from "./sell-pricechart";
+import { AppType, developableApps, getAppByType } from "../../develop-panel/app-model";
 
-interface SellPanelProps {
+export interface SellControlProps {
   moneyState: number;
   setMoneyState: any; // TODO
   appState: any; // TODO
@@ -11,7 +11,7 @@ interface SellPanelProps {
   setPriceState: any; // TODO
 }
 
-export const SellPanel = (props: SellPanelProps) => {
+export const SellControls = (props: SellControlProps) => {
   const { moneyState, setMoneyState, appState, setAppState, setPriceState } = props;
   const [selectedAppType, setSelectedAppType] = useState(AppType.SMALL);
   const currentAppValue = 10;

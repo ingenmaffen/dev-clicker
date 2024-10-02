@@ -1,9 +1,13 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "./app";
 
-test("renders learn react link", () => {
+jest.mock("react-apexcharts", () => ({
+  __esModule: true,
+  default: () => <div></div>,
+}));
+
+test("renders app", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const element = screen.getByText(/Dev Clicker/i);
+  expect(element).toBeInTheDocument();
 });

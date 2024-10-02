@@ -4,10 +4,12 @@ interface HeaderProps {
   money: number;
 }
 
+const urlToSource = "https://github.com/ingenmaffen/dev-clicker";
+
 export const Header = ({ money }: HeaderProps) => (
-  <>
-    <a href="https://github.com/ingenmaffen/dev-clicker" className="source">
-      https://github.com/ingenmaffen/dev-clicker
+  <div data-testid="header-container">
+    <a href={urlToSource} className="source">
+      {urlToSource}
     </a>
     <h1 className="title">
       <img className="logo" src={"logo512.png"} alt={"logo"} />
@@ -17,5 +19,5 @@ export const Header = ({ money }: HeaderProps) => (
       <div className="placeholder"></div>
       <div className="money-container">$ {money}</div>
     </div>
-  </>
+  </div>
 );

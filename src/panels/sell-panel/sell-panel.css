@@ -1,9 +1,9 @@
-.sell-app-panel-container {
+.sell-app-panel {
   display: flex;
   flex-direction: column;
 }
 
-.sell-app-panel {
+.sell-controls-container {
   display: flex;
   height: 36px;
   column-gap: 10px;

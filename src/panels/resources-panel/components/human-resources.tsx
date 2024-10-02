@@ -20,7 +20,7 @@ export const HumanResources = (props: HumanResourcesProps) => {
   };
 
   return (
-    <div className="human-resources-panel">
+    <div className="human-resources-panel" data-testid="human-resources-panel">
       {humanResources.map((person) => (
         <HirePersonButton onClick={() => buyHumanResource(person.type)} key={person.type} numberOfResources={humanResourceState[person.type]!} {...person} />
       ))}

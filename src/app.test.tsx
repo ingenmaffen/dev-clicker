@@ -1,13 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import App from "./app";
 
-jest.mock("react-apexcharts", () => ({
-  __esModule: true,
-  default: () => <div></div>,
-}));
-
-test("renders app", () => {
+test("renders all containers", () => {
   render(<App />);
-  const element = screen.getByText(/Dev Clicker/i);
-  expect(element).toBeInTheDocument();
+  const testIds = ["header-container", "develop-panel", "sell-app-panel", "human-resources-panel"];
+  testIds.forEach((selector) => {
+    const element = screen.getByTestId(selector);
+    expect(element).toBeInTheDocument();
+  });
 });

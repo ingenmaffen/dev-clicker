@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Chart from "react-apexcharts";
 
 import { ReactSetFunction } from "../../../../shared/react-override";
@@ -10,21 +10,21 @@ export interface SellChartProps {
 
 export const SellPriceChart = (props: SellChartProps) => {
   const { setPriceState } = props;
-  const [xValues, setXValues] = useState(getXValues());
-  const [yValues, setYValues] = useState(getYValues());
-  const [chartState, setChartState] = useState(getChartData(xValues, yValues));
+  const xValues = useRef(getXValues());
+  const yValues = useRef(getYValues());
+  const [chartState, setChartState] = useState(getChartData(xValues.current, yValues.current));
 
   const setLatestPrice = () => {
-    const latestPrice = yValues[yValues.length - 1];
+    const latestPrice = yValues.current[yValues.current.length - 1];
     setPriceState(latestPrice);
   };
 
   useEffect(() => {
     setLatestPrice();
     const intervalId = setInterval(() => {
-      setXValues(shiftXValues(xValues));
-      setYValues(shiftYValues(yValues));
-      const updatedChartData = getChartData(xValues, yValues);
+      xValues.current = shiftXValues(xValues.current);
+      yValues.current = shiftYValues(yValues.current);
+      const updatedChartData = getChartData(xValues.current, yValues.current);
       setChartState(updatedChartData);
       setLatestPrice();
     }, 60 * 1000);

@@ -21,7 +21,7 @@ export const DevelopAppButton = (props: DevelopAppButtonProps) => {
     return requiredDevelopers > humanResources.developer! || timer > 0;
   };
 
-  const decreaseTimerValue = (newValue) => {
+  const decreaseTimerValue = (newValue: number) => {
     setTimeout(() => {
       setTimer(newValue);
       if (newValue > 0) decreaseTimerValue(newValue - 1);

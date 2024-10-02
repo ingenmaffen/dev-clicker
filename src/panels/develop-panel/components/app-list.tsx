@@ -1,6 +1,6 @@
 import "./app-list.css";
 import { DevelopAppButton } from "../../../shared/components/develop-app-button";
-import { developableApps } from "../app-model";
+import { AppType, developableApps } from "../app-model";
 import { AppState, HumanResourceState } from "../../../shared/game-state";
 import { ReactSetFunction } from "../../../shared/react-override";
 
@@ -12,10 +12,10 @@ export interface AppListProps {
 
 export const AppList = (props: AppListProps) => {
   const { appState, setAppState, humanResources } = props;
-  const developApp = (appType) => {
+  const developApp = (type: AppType) => {
     const updatedAppState = {
       ...appState,
-      [appType]: appState[appType] + 1,
+      [type]: appState[type]! + 1,
     };
     setAppState(updatedAppState);
   };

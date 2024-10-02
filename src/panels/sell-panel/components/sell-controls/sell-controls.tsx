@@ -1,5 +1,5 @@
 import "./sell-controls.css";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { AppType, developableApps, getAppByType } from "../../../develop-panel/app-model";
 import { ReactSetFunction } from "../../../../shared/react-override";
 import { AppState } from "../../../../shared/game-state";
@@ -15,7 +15,7 @@ export const SellControls = (props: SellControlProps) => {
   const { moneyState, setMoneyState, appState, setAppState } = props;
   const [selectedAppType, setSelectedAppType] = useState(AppType.SMALL);
   const currentAppValue = 10;
-  const handleAppTypeChangedEvent = (event) => setSelectedAppType(event.target.value);
+  const handleAppTypeChangedEvent = (event: ChangeEvent<any>) => setSelectedAppType(event.target.value);
   const sellApp = () => {
     if (selectedAppType) {
       const updatedAppState = {

@@ -31,5 +31,6 @@ export const SellPriceChart = (props: SellChartProps) => {
     return () => clearInterval(intervalId);
   }, []);
 
+  // TODO: add tooltip too see exact price
   return <Chart options={chartState.options} series={chartState.series} type="line" />;
 };

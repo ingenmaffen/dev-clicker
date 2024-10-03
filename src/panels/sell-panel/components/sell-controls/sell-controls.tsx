@@ -30,14 +30,14 @@ export const SellControls = (props: SellControlProps) => {
 
   return (
     <>
-      <select className="sell-app-selector" value={selectedAppType} onChange={handleAppTypeChangedEvent}>
+      <select data-testid="sell-app-select" className="sell-app-selector" value={selectedAppType} onChange={handleAppTypeChangedEvent}>
         {developableApps.map((app) => (
           <option key={app.type} value={app.type}>
             Sell {app.type} App: {appState[app.type]}
           </option>
         ))}
       </select>
-      <button className="sell-app-button" disabled={!appState[selectedAppType]} onClick={sellApp}>
+      <button data-testid="sell-app-button" className="sell-app-button" disabled={!appState[selectedAppType]} onClick={sellApp}>
         Sell App
       </button>
     </>

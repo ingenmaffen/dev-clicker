@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import { SellPriceChart } from "./sell-pricechart";
+import { SellChartProps, SellPriceChart } from "./sell-pricechart";
 
 describe("SellPriceChart", () => {
-  const props: any = {
+  const props: SellChartProps = {
     setPriceState: jest.fn(),
   };
 

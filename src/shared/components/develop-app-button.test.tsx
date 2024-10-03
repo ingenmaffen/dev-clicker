@@ -68,4 +68,6 @@ describe("DevelopAppButton", () => {
     expect(timer).toHaveTextContent("");
     expect(props.incrementAppByType).toHaveBeenCalledWith(props.type);
   });
+
+  // TODO: have unit test to check disabled state after refactor
 });

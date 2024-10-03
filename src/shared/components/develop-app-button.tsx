@@ -39,12 +39,14 @@ export const DevelopAppButton = (props: DevelopAppButtonProps) => {
 
   // TODO: button shouldn't be disabled; clicking on it should decrease the timer (if no timer is present, set it first)
   return (
-    <button onClick={handleClick} className="common-button" disabled={getButtonDisabledState()}>
+    <button onClick={handleClick} className="common-button" data-testid="develop-button" disabled={getButtonDisabledState()}>
       <div className="left-side">
-        <img src={icon} alt={type} />
-        <span>Develop {type} App</span>
+        <img data-testid="develop-button-icon" src={icon} alt={type} />
+        <span data-testid="develop-button-text">Develop {type} App</span>
       </div>
-      <div className="right-side">{formatTime(timer)}</div>
+      <div className="right-side" data-testid="develop-button-timer">
+        {formatTime(timer)}
+      </div>
     </button>
   );
 };

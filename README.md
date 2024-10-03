@@ -2,6 +2,10 @@
 
 An idle game based on software development. The game is available at [https://dev-clicker.web.app/](https://dev-clicker.web.app/)
 
+## Contribution
+
+To run the application locally just run `npm install` and `npm start`.
+
 ## Roadmap
 
 - 0.8

@@ -27,6 +27,5 @@ describe("AppList", () => {
     });
   });
 
-  // TODO: test developApp method if possible
   // TODO: move disabled state check to this component and only pass disabled boolean to common-button
 });

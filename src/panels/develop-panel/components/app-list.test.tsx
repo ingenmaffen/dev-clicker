@@ -13,7 +13,7 @@ describe("AppList", () => {
       developer: 0,
     },
     setApps: jest.fn(),
-  };
+  } as any;
 
   beforeEach(() => {
     render(<AppList {...props} />);

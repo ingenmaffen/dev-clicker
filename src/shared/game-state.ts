@@ -1,8 +1,8 @@
 import { AppType } from "../panels/develop-panel/app-model";
 import { HumanResourceType } from "../panels/resources-panel/human-resources-model";
 
-export type AppState = { [key in AppType]?: number };
-export type HumanResourceState = { [key in HumanResourceType]?: number };
+export type AppState = { [key in AppType]: number };
+export type HumanResourceState = { [key in HumanResourceType]: number };
 
 interface GameState {
   money: number;

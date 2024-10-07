@@ -20,7 +20,7 @@ export const SellControls = (props: SellControlProps) => {
     if (selectedAppType) {
       const updatedAppState = {
         ...apps,
-        [selectedAppType]: apps[selectedAppType]! - 1,
+        [selectedAppType]: apps[selectedAppType] - 1,
       };
       const appValue = getAppByType(selectedAppType)!.valueMultiplier * currentAppValue;
       setApps(updatedAppState);

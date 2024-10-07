@@ -15,7 +15,7 @@ export const AppList = (props: AppListProps) => {
   const developApp = (type: AppType) => {
     const updatedAppState = {
       ...apps,
-      [type]: apps[type]! + 1,
+      [type]: apps[type] + 1,
     };
     setApps(updatedAppState);
   };

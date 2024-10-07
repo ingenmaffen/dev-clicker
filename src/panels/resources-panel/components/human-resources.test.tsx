@@ -34,7 +34,7 @@ describe("HumanResources", () => {
     types.forEach((type) => {
       const button = screen.getByText(converCamelCase(type));
       fireEvent.click(button);
-      expect(props.setHumanResourceState).toHaveBeenCalledWith({ ...props.humanResourceState, [type]: props.humanResourceState[type]! + 1 });
+      expect(props.setHumanResourceState).toHaveBeenCalledWith({ ...props.humanResourceState, [type]: props.humanResourceState[type] + 1 });
     });
   });
 });

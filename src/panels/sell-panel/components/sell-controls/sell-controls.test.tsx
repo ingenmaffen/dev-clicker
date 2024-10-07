@@ -35,9 +35,9 @@ describe("SellControls", () => {
   });
 
   test("select has all elements with proper values", () => {
-    expect(select).toHaveTextContent(getText(AppType.SMALL, props.apps.small!));
-    expect(select).toHaveTextContent(getText(AppType.MEDIUM, props.apps.medium!));
-    expect(select).toHaveTextContent(getText(AppType.LARGE, props.apps.large!));
+    expect(select).toHaveTextContent(getText(AppType.SMALL, props.apps.small));
+    expect(select).toHaveTextContent(getText(AppType.MEDIUM, props.apps.medium));
+    expect(select).toHaveTextContent(getText(AppType.LARGE, props.apps.large));
   });
 
   test("sell button has proper text", () => {
@@ -48,10 +48,10 @@ describe("SellControls", () => {
     appTypes.forEach((appType) => {
       userEvent.selectOptions(select, appType);
       const initialValue = props.apps[appType];
-      expect(select).toHaveTextContent(getText(appType, props.apps[appType]!));
+      expect(select).toHaveTextContent(getText(appType, props.apps[appType]));
 
       fireEvent.click(sellButton);
-      expect(props.setApps).toHaveBeenCalledWith(expect.objectContaining({ [appType]: initialValue! - 1 }));
+      expect(props.setApps).toHaveBeenCalledWith(expect.objectContaining({ [appType]: initialValue - 1 }));
     });
   });
 });

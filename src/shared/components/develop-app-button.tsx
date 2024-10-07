@@ -18,7 +18,7 @@ export const DevelopAppButton = (props: DevelopAppButtonProps) => {
   const { incrementAppByType, type, icon, humanResources, requiredDevelopers, time } = props;
   const [timer, setTimer] = useState(0);
   const getButtonDisabledState = () => {
-    return requiredDevelopers > humanResources.developer! || timer > 0;
+    return requiredDevelopers > humanResources.developer || timer > 0;
   };
 
   const decreaseTimerValue = (newValue: number) => {

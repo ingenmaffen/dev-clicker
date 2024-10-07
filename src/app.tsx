@@ -9,24 +9,18 @@ import { SellPanel } from "./panels/sell-panel/sell-panel";
 
 const App = () => {
   const gameState = getGameState();
-  const [currentMoney, setCurrentMoney] = useState(gameState.money);
-  const [currentApps, setCurrentApps] = useState(gameState.apps);
-  const [currentResources, setCurrentResources] = useState(gameState.humanResources);
-  const [_currentPrice, setCurrentPrice] = useState(0);
+  const [money, setMoney] = useState(gameState.money);
+  const [apps, setApps] = useState(gameState.apps);
+  const [humanResources, setHumanResources] = useState(gameState.humanResources);
+  const [_priceMultiplier, setPriceMultiplier] = useState(0);
 
   return (
     <>
-      <Header money={currentMoney} />
+      <Header money={money} />
       <div className="main-content">
-        <DevelopPanel appState={currentApps} setAppState={setCurrentApps} humanResources={currentResources} />
-        <SellPanel
-          moneyState={currentMoney}
-          setMoneyState={setCurrentMoney}
-          appState={currentApps}
-          setAppState={setCurrentApps}
-          setPriceState={setCurrentPrice}
-        />
-        <ResourcesPanel humanResourceState={currentResources} setHumanResourceState={setCurrentResources} />
+        <DevelopPanel apps={apps} setApps={setApps} humanResources={humanResources} />
+        <SellPanel money={money} setMoney={setMoney} apps={apps} setApps={setApps} setPriceMultiplier={setPriceMultiplier} />
+        <ResourcesPanel humanResourceState={humanResources} setHumanResourceState={setHumanResources} />
       </div>
     </>
   );

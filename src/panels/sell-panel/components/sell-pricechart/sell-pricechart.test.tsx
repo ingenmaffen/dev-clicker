@@ -3,7 +3,7 @@ import { SellChartProps, SellPriceChart } from "./sell-pricechart";
 
 describe("SellPriceChart", () => {
   const props: SellChartProps = {
-    setPriceState: jest.fn(),
+    setPriceMultiplier: jest.fn(),
   };
 
   beforeEach(() => {
@@ -17,7 +17,7 @@ describe("SellPriceChart", () => {
   });
 
   test("call setPriceState on first render", () => {
-    expect(props.setPriceState).toHaveBeenCalledTimes(1);
+    expect(props.setPriceMultiplier).toHaveBeenCalledTimes(1);
   });
 
   // TODO: unit test for setPriceState being called after 60s

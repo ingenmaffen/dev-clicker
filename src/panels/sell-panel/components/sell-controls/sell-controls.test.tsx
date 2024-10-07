@@ -5,14 +5,14 @@ import { AppType } from "../../../develop-panel/app-model";
 
 describe("SellControls", () => {
   const props: SellControlProps = {
-    moneyState: 0,
-    setMoneyState: jest.fn(),
-    appState: {
+    money: 0,
+    setMoney: jest.fn(),
+    apps: {
       small: 3,
       medium: 2,
       large: 3,
     },
-    setAppState: jest.fn(),
+    setApps: jest.fn(),
   };
 
   const appTypes = Object.values(AppType);
@@ -35,9 +35,9 @@ describe("SellControls", () => {
   });
 
   test("select has all elements with proper values", () => {
-    expect(select).toHaveTextContent(getText(AppType.SMALL, props.appState.small!));
-    expect(select).toHaveTextContent(getText(AppType.MEDIUM, props.appState.medium!));
-    expect(select).toHaveTextContent(getText(AppType.LARGE, props.appState.large!));
+    expect(select).toHaveTextContent(getText(AppType.SMALL, props.apps.small!));
+    expect(select).toHaveTextContent(getText(AppType.MEDIUM, props.apps.medium!));
+    expect(select).toHaveTextContent(getText(AppType.LARGE, props.apps.large!));
   });
 
   test("sell button has proper text", () => {
@@ -47,11 +47,11 @@ describe("SellControls", () => {
   test("selling selected app works", () => {
     appTypes.forEach((appType) => {
       userEvent.selectOptions(select, appType);
-      const initialValue = props.appState[appType];
-      expect(select).toHaveTextContent(getText(appType, props.appState[appType]!));
+      const initialValue = props.apps[appType];
+      expect(select).toHaveTextContent(getText(appType, props.apps[appType]!));
 
       fireEvent.click(sellButton);
-      expect(props.setAppState).toHaveBeenCalledWith(expect.objectContaining({ [appType]: initialValue! - 1 }));
+      expect(props.setApps).toHaveBeenCalledWith(expect.objectContaining({ [appType]: initialValue! - 1 }));
     });
   });
 });

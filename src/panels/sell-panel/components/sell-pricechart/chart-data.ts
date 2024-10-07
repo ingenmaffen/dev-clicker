@@ -5,7 +5,7 @@ interface ChartData {
   series: ApexAxisChartSeries;
 }
 
-const getCurrentTimeFormattable = () => {
+const getCurrentTimeInMinutes = () => {
   const currentTime = new Date();
   return currentTime.getHours() * 60 + currentTime.getMinutes();
 };
@@ -20,7 +20,7 @@ const getPossibleNextYValue = (prevValue: number): number => {
 };
 
 export const getXValues = (): string[] => {
-  const formattableTime = getCurrentTimeFormattable();
+  const formattableTime = getCurrentTimeInMinutes();
   const xAxisDateValues: string[] = [];
   for (let i = 0; i < 10; i++) {
     let prevTimeValue = formattableTime - i;
@@ -32,13 +32,13 @@ export const getXValues = (): string[] => {
 
 export const shiftXValues = (xValues: string[]): string[] => {
   xValues.shift();
-  xValues.push(formatTimeWithoutParenthesis(getCurrentTimeFormattable()));
+  xValues.push(formatTimeWithoutParenthesis(getCurrentTimeInMinutes()));
   return xValues;
 };
 
 export const getYValues = (): number[] => {
   const yAxisValues: number[] = [];
-  yAxisValues.push(15 + Math.ceil(Math.random() * 10));
+  yAxisValues.push(15 + Math.ceil(Math.random() * 10)); // TODO: update initial value (from 15 to 75 maybe)
   for (let i = 1; i < 10; i++) {
     yAxisValues.push(getPossibleNextYValue(yAxisValues[i - 1]));
   }
@@ -69,7 +69,7 @@ export const getChartData = (xValues: string[], yValues: number[]): ChartData =>
     },
     series: [
       {
-        name: "App base price",
+        name: "App base price", // TODO: update text (if visible)
         data: yValues,
       },
     ],

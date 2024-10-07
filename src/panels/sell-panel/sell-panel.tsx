@@ -5,13 +5,13 @@ import "./sell-panel.css";
 
 interface SellPanelProps extends SellControlProps, SellChartProps {}
 
-export const SellPanel = ({ moneyState, setMoneyState, appState, setAppState, setPriceState }: SellPanelProps) => (
+export const SellPanel = ({ money, setMoney, apps, setApps, setPriceMultiplier }: SellPanelProps) => (
   <div className="sell-app-panel" data-testid="sell-app-panel">
     <div className="sell-controls-container">
-      <SellControls moneyState={moneyState} setMoneyState={setMoneyState} appState={appState} setAppState={setAppState} />
+      <SellControls money={money} setMoney={setMoney} apps={apps} setApps={setApps} />
     </div>
     <div>
-      <SellPriceChart setPriceState={setPriceState} />
+      <SellPriceChart setPriceMultiplier={setPriceMultiplier} />
     </div>
   </div>
 );

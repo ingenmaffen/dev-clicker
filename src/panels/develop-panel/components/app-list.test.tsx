@@ -4,7 +4,7 @@ import { AppType } from "../app-model";
 
 describe("AppList", () => {
   const props: AppListProps = {
-    appState: {
+    apps: {
       small: 0,
       medium: 0,
       large: 0,
@@ -12,7 +12,7 @@ describe("AppList", () => {
     humanResources: {
       developer: 0,
     },
-    setAppState: jest.fn(),
+    setApps: jest.fn(),
   };
 
   beforeEach(() => {

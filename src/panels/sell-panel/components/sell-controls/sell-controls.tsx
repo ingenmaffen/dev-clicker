@@ -5,26 +5,26 @@ import { ReactSetFunction } from "../../../../shared/react-override";
 import { AppState } from "../../../../shared/game-state";
 
 export interface SellControlProps {
-  moneyState: number;
-  setMoneyState: ReactSetFunction<number>;
-  appState: AppState;
-  setAppState: ReactSetFunction<AppState>;
+  money: number;
+  setMoney: ReactSetFunction<number>;
+  apps: AppState;
+  setApps: ReactSetFunction<AppState>;
 }
 
 export const SellControls = (props: SellControlProps) => {
-  const { moneyState, setMoneyState, appState, setAppState } = props;
+  const { money, setMoney, apps, setApps } = props;
   const [selectedAppType, setSelectedAppType] = useState(AppType.SMALL);
   const currentAppValue = 10;
   const handleAppTypeChangedEvent = (event: ChangeEvent<any>) => setSelectedAppType(event.target.value);
   const sellApp = () => {
     if (selectedAppType) {
       const updatedAppState = {
-        ...appState,
-        [selectedAppType]: appState[selectedAppType]! - 1,
+        ...apps,
+        [selectedAppType]: apps[selectedAppType]! - 1,
       };
       const appValue = getAppByType(selectedAppType)!.valueMultiplier * currentAppValue;
-      setAppState(updatedAppState);
-      setMoneyState(moneyState + appValue);
+      setApps(updatedAppState);
+      setMoney(money + appValue);
     }
   };
 
@@ -33,11 +33,11 @@ export const SellControls = (props: SellControlProps) => {
       <select data-testid="sell-app-select" className="sell-app-selector" value={selectedAppType} onChange={handleAppTypeChangedEvent}>
         {developableApps.map((app) => (
           <option key={app.type} value={app.type}>
-            Sell {app.type} App: {appState[app.type]}
+            Sell {app.type} App: {apps[app.type]}
           </option>
         ))}
       </select>
-      <button data-testid="sell-app-button" className="sell-app-button" disabled={!appState[selectedAppType]} onClick={sellApp}>
+      <button data-testid="sell-app-button" className="sell-app-button" disabled={!apps[selectedAppType]} onClick={sellApp}>
         Sell App
       </button>
     </>

@@ -5,18 +5,18 @@ import { ReactSetFunction } from "../../../../shared/react-override";
 import { getChartData, getXValues, getYValues, shiftXValues, shiftYValues } from "./chart-data";
 
 export interface SellChartProps {
-  setPriceState: ReactSetFunction<number>;
+  setPriceMultiplier: ReactSetFunction<number>;
 }
 
 export const SellPriceChart = (props: SellChartProps) => {
-  const { setPriceState } = props;
+  const { setPriceMultiplier } = props;
   const xValues = useRef(getXValues());
   const yValues = useRef(getYValues());
   const [chartState, setChartState] = useState(getChartData(xValues.current, yValues.current));
 
   const setLatestPrice = () => {
     const latestPrice = yValues.current[yValues.current.length - 1];
-    setPriceState(latestPrice);
+    setPriceMultiplier(latestPrice);
   };
 
   useEffect(() => {

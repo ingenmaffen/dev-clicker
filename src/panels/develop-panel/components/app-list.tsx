@@ -5,19 +5,19 @@ import { AppState, HumanResourceState } from "../../../shared/game-state";
 import { ReactSetFunction } from "../../../shared/react-override";
 
 export interface AppListProps {
-  appState: AppState;
-  setAppState: ReactSetFunction<AppState>;
+  apps: AppState;
+  setApps: ReactSetFunction<AppState>;
   humanResources: HumanResourceState;
 }
 
 export const AppList = (props: AppListProps) => {
-  const { appState, setAppState, humanResources } = props;
+  const { apps, setApps, humanResources } = props;
   const developApp = (type: AppType) => {
     const updatedAppState = {
-      ...appState,
-      [type]: appState[type]! + 1,
+      ...apps,
+      [type]: apps[type]! + 1,
     };
-    setAppState(updatedAppState);
+    setApps(updatedAppState);
   };
 
   return (

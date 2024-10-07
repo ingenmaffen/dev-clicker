@@ -21,7 +21,7 @@ describe("AppList", () => {
 
   test("renders buttons", () => {
     const appTypes = Object.values(AppType);
-    const buttonsContainer = screen.getByTestId("develop-panel");
+    const buttonsContainer = screen.getByTestId("app-list");
     appTypes.forEach((type) => {
       expect(buttonsContainer).toHaveTextContent(`Develop ${type} App`);
     });

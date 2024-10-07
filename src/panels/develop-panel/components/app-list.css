@@ -1,8 +1,8 @@
-.develop-panel {
+.app-list {
   display: flex;
   flex-direction: column;
 }
 
-.develop-panel > * {
+.app-list > * {
   margin-bottom: 10px;
 }

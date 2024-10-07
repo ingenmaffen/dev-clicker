@@ -21,7 +21,7 @@ export const AppList = (props: AppListProps) => {
   };
 
   return (
-    <div className="develop-panel" data-testid="develop-panel">
+    <div className="app-list" data-testid="app-list">
       {developableApps.map((app) => (
         <DevelopAppButton humanResources={humanResources} incrementAppByType={developApp} key={app.type} {...app} />
       ))}

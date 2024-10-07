@@ -3,7 +3,7 @@ import App from "./app";
 
 test("renders all containers", () => {
   render(<App />);
-  const testIds = ["header-container", "develop-panel", "sell-app-panel", "human-resources-panel"];
+  const testIds = ["header-container", "app-list", "sell-app-panel", "human-resources-panel"];
   testIds.forEach((testId) => {
     const element = screen.getByTestId(testId);
     expect(element).toBeInTheDocument();
@@ -18,7 +18,7 @@ describe("AppList functionality", () => {
 
   test("clicking on app starts timer and makes button disabled", () => {
     const buttonText = "Develop small App";
-    const developPanel = screen.getByTestId("develop-panel");
+    const developPanel = screen.getByTestId("app-list");
     const smallAppButton = developPanel.children[0];
 
     expect(smallAppButton).toHaveTextContent(buttonText);
@@ -35,7 +35,7 @@ describe("AppList functionality", () => {
     jest.useFakeTimers();
 
     const buttonText = "Develop small App";
-    const developPanel = screen.getByTestId("develop-panel");
+    const developPanel = screen.getByTestId("app-list");
     const smallAppButton = developPanel.children[0];
 
     const sellAppPanel = screen.getByTestId("sell-app-panel");

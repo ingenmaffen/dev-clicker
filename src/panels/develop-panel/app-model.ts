@@ -36,4 +36,4 @@ export const developableApps: App[] = [
   },
 ];
 
-export const getAppByType = (appType: AppType): App | undefined => developableApps.find((app) => app.type === appType);
+export const getAppByType = (appType: AppType) => developableApps.find((app) => app.type === appType);

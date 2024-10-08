@@ -40,10 +40,11 @@ export const getYValues = (): number[] => {
 };
 
 export const shiftYValues = (yValues: number[]): number[] => {
-  yValues.shift();
-  const prevValue = yValues[yValues.length - 1];
-  yValues.push(getPossibleNextYValue(prevValue));
-  return yValues;
+  const newYValues = [...yValues];
+  newYValues.shift();
+  const prevValue = newYValues[newYValues.length - 1];
+  newYValues.push(getPossibleNextYValue(prevValue));
+  return newYValues;
 };
 
 export const getChartData = (xValues: string[], yValues: number[]): ChartData => {

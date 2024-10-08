@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Chart from "react-apexcharts";
 
 import { ReactSetFunction } from "../../../../shared/react-override";
-import { getChartData, getXValues, getYValues, shiftXValues, shiftYValues } from "./chart-data";
+import { getChartData, getXValues, getYValues, shiftYValues } from "./chart-data";
 
 export interface SellChartProps {
   setPriceMultiplier: ReactSetFunction<number>;
@@ -22,7 +22,7 @@ export const SellPriceChart = (props: SellChartProps) => {
   useEffect(() => {
     setLatestPrice();
     const intervalId = setInterval(() => {
-      xValues.current = shiftXValues(xValues.current);
+      xValues.current = getXValues();
       yValues.current = shiftYValues(yValues.current);
       const updatedChartData = getChartData(xValues.current, yValues.current);
       setChartState(updatedChartData);

@@ -30,12 +30,6 @@ export const getXValues = (): string[] => {
   return xAxisDateValues;
 };
 
-export const shiftXValues = (xValues: string[]): string[] => {
-  xValues.shift();
-  xValues.push(formatTimeWithoutParenthesis(getCurrentTimeInMinutes()));
-  return xValues;
-};
-
 export const getYValues = (): number[] => {
   const yAxisValues: number[] = [];
   yAxisValues.push(15 + Math.ceil(Math.random() * 10)); // TODO: update initial value (from 15 to 75 maybe)

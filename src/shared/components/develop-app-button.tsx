@@ -6,7 +6,7 @@ import "../styles/common-button.css";
 import { HumanResourceState } from "../game-state";
 
 interface DevelopAppButtonProps {
-  incrementAppByType: Function;
+  incrementAppByType: (type: AppType) => void;
   type: AppType;
   icon: string;
   humanResources: HumanResourceState;

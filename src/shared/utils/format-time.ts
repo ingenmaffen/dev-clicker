@@ -8,6 +8,6 @@ export const formatTimeWithoutParenthesis = (timeInSeconds: number): string => {
   return timeInSeconds >= 0 ? `${formatNumberToDoubleDigit(minute)}:${formatNumberToDoubleDigit(second)}` : "";
 };
 
-const formatNumberToDoubleDigit = (number: number): string => {
-  return number < 10 ? `0${number}` : `${number}`;
+const formatNumberToDoubleDigit = (value: number): string => {
+  return value < 10 ? `0${value}` : `${value}`;
 };

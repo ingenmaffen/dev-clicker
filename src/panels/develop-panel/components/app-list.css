@@ -1,0 +1,8 @@
+.app-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-list > * {
+  margin-bottom: 10px;
+}

@@ -9,6 +9,7 @@
   font-size: 18px;
   border-radius: 8px;
   box-shadow: 2px 2px rgba(255, 255, 255, 0.25);
+  white-space: nowrap;
 }
 
 .sell-app-button:not([disabled]) {

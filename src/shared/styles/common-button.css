@@ -25,13 +25,16 @@
 }
 
 .common-button .left-side {
-  flex: 2;
+  flex: auto;
   text-align: left;
   white-space: nowrap;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .common-button .right-side {
-  flex: 5;
+  flex: 1;
   vertical-align: top;
   font-size: 32px;
   text-align: right;

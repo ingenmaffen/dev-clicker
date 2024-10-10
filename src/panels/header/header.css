@@ -30,8 +30,8 @@
   font-family: computerPixel;
   font-size: 32px;
   flex: 1;
-  text-align: left;
-  margin-left: 10px;
+  text-align: right;
+  margin: 0 14px;
 }
 
 .source {

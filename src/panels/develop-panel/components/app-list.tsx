@@ -22,9 +22,13 @@ export const AppList = (props: AppListProps) => {
 
   return (
     <div className="app-list" data-testid="app-list">
-      {developableApps.map((app) => (
-        <DevelopAppButton humanResources={humanResources} incrementAppByType={developApp} key={app.type} {...app} />
-      ))}
+      {developableApps.map((app) => {
+        const isDisabled = () => {
+          return app.requiredDevelopers > humanResources.developer;
+        };
+
+        return <DevelopAppButton isDisabled={isDisabled()} incrementAppByType={developApp} key={app.type} {...app} />;
+      })}
     </div>
   );
 };

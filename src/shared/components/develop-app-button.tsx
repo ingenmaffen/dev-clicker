@@ -1,45 +1,62 @@
-import { useState } from "react";
+import { useEffect, useReducer } from "react";
 
 import { formatTime } from "../utils/format-time";
 import { AppType } from "../../panels/develop-panel/app-model";
 import "../styles/common-button.css";
-import { HumanResourceState } from "../game-state";
+
+enum TimeReducerActionType {
+  DECREASE = "decrease",
+  SET = "set",
+}
+
+interface TimeReducerAction {
+  type: TimeReducerActionType;
+  value?: number;
+}
 
 interface DevelopAppButtonProps {
   incrementAppByType: (type: AppType) => void;
   type: AppType;
   icon: string;
-  humanResources: HumanResourceState;
-  requiredDevelopers: number;
   time: number;
+  isDisabled: boolean;
 }
 
-export const DevelopAppButton = (props: DevelopAppButtonProps) => {
-  const { incrementAppByType, type, icon, humanResources, requiredDevelopers, time } = props;
-  const [timer, setTimer] = useState(0);
-  const getButtonDisabledState = () => {
-    return requiredDevelopers > humanResources.developer || timer > 0;
-  };
+const updateTimer = (state: number, action: TimeReducerAction): number => {
+  switch (action.type) {
+    case TimeReducerActionType.DECREASE:
+      return state - 1;
+    case TimeReducerActionType.SET:
+      return action.value! | 0;
+  }
+};
 
-  const decreaseTimerValue = (newValue: number) => {
-    setTimeout(() => {
-      setTimer(newValue);
-      if (newValue > 0) decreaseTimerValue(newValue - 1);
-      if (newValue <= 0) {
-        setTimer(0);
-        incrementAppByType(type);
+export const DevelopAppButton = (props: DevelopAppButtonProps) => {
+  const { incrementAppByType, type, icon, time, isDisabled } = props;
+  const [timer, dispatch] = useReducer(updateTimer, Number.MIN_SAFE_INTEGER);
+
+  useEffect(() => {
+    if (timer <= 0 && timer !== Number.MIN_SAFE_INTEGER) {
+      incrementAppByType(type);
+    }
+    const intervalId = setInterval(() => {
+      if (timer > 0) {
+        dispatch({ type: TimeReducerActionType.DECREASE });
       }
     }, 1000);
-  };
+    return () => clearInterval(intervalId);
+  }, [timer]);
 
   const handleClick = () => {
-    setTimer(time);
-    decreaseTimerValue(time - 1);
+    if (timer <= 0) {
+      dispatch({ type: TimeReducerActionType.SET, value: time });
+    } else {
+      dispatch({ type: TimeReducerActionType.DECREASE });
+    }
   };
 
-  // TODO: button shouldn't be disabled; clicking on it should decrease the timer (if no timer is present, set it first)
   return (
-    <button onClick={handleClick} className="common-button" data-testid="develop-button" disabled={getButtonDisabledState()}>
+    <button onClick={handleClick} className="common-button" data-testid="develop-button" disabled={isDisabled}>
       <div className="left-side">
         <img data-testid="develop-button-icon" src={icon} alt={type} />
         <span data-testid="develop-button-text">Develop {type} App</span>

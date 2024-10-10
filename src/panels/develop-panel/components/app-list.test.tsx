@@ -26,6 +26,4 @@ describe("AppList", () => {
       expect(buttonsContainer).toHaveTextContent(`Develop ${type} App`);
     });
   });
-
-  // TODO: move disabled state check to this component and only pass disabled boolean to common-button
 });

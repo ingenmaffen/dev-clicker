@@ -26,7 +26,6 @@ export const AppList = (props: AppListProps) => {
         const isDisabled = () => {
           return app.requiredDevelopers > humanResources.developer;
         };
-
         return <DevelopAppButton isDisabled={isDisabled()} incrementAppByType={developApp} key={app.type} {...app} />;
       })}
     </div>

@@ -16,7 +16,7 @@ describe("AppList functionality", () => {
     render(<App />);
   });
 
-  test("clicking on app starts timer and makes button disabled", () => {
+  test("clicking on app starts timer and every consequent click decreases the timer", () => {
     const buttonText = "Develop small App";
     const developPanel = screen.getByTestId("app-list");
     const smallAppButton = developPanel.children[0];
@@ -28,10 +28,13 @@ describe("AppList functionality", () => {
     fireEvent.click(smallAppButton);
     expect(smallAppButton).toHaveTextContent(buttonText);
     expect(smallAppButton).toHaveTextContent(buttonText + "(01:00)");
-    expect(smallAppButton.getAttribute("disabled")).not.toBeNull();
+
+    fireEvent.click(smallAppButton);
+    expect(smallAppButton).toHaveTextContent(buttonText);
+    expect(smallAppButton).toHaveTextContent(buttonText + "(00:59)");
   });
 
-  test("after the timer runs out the button gets re-enabled and appType gets incremented", () => {
+  test("after the timer runs out the timer disappears and appType gets incremented", () => {
     jest.useFakeTimers();
 
     const buttonText = "Develop small App";
@@ -46,7 +49,6 @@ describe("AppList functionality", () => {
     fireEvent.click(smallAppButton);
     expect(smallAppButton).toHaveTextContent(buttonText);
     expect(smallAppButton).toHaveTextContent(buttonText + "(01:00)");
-    expect(smallAppButton.getAttribute("disabled")).not.toBeNull();
 
     act(() => jest.advanceTimersByTime(1000));
     expect(smallAppButton).toHaveTextContent(buttonText + "(00:59)");
@@ -56,7 +58,6 @@ describe("AppList functionality", () => {
 
     expect(smallAppButton).toHaveTextContent(buttonText);
     expect(smallAppButton).not.toHaveTextContent(buttonText + "(");
-    expect(smallAppButton.getAttribute("disabled")).toBeNull();
     expect(sellAppPanel).toHaveTextContent(sellAppSelectText + "1");
   });
 });

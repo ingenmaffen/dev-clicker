@@ -14,7 +14,7 @@ interface TimeReducerAction {
   value?: number;
 }
 
-interface DevelopAppButtonProps {
+export interface DevelopAppButtonProps {
   incrementAppByType: (type: AppType) => void;
   type: AppType;
   icon: string;
@@ -27,7 +27,7 @@ const updateTimer = (state: number, action: TimeReducerAction): number => {
     case TimeReducerActionType.DECREASE:
       return state - 1;
     case TimeReducerActionType.SET:
-      return action.value! | 0;
+      return action.value! || 0;
   }
 };
 

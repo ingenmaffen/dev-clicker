@@ -12,10 +12,8 @@ To run the application locally just run `npm install` and `npm start`.
   - Add app sell-rate to sell panel (stock market minigame)
   - Add tooltips on hover, to show extra info about a Resource or App
   - Add autosave feature (and savestates in general)
-  - Add unit tests
   - Mobile support
-    - Fix responsivity issues
-    - Closable panels
+    - Closable panels / tabs
 - 0.9
   - Add Business Analyst functionality (they handle selling the apps)
   - Add monthly cost for hiring a resource
